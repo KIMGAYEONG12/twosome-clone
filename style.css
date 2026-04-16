@@ -1,134 +1,226 @@
-body {
-  background-color: red;
-}
-/* ==== 변수 ==== */
+/* ==== 변수 설정 ==== */
 :root {
   --color-main: #000000;
-  --color-sub: #666666;
-  --color-bg: #f5f5f5;
+  --color-point: #ff0000;
+  --color-bg: #f8f8f8;
   --color-white: #ffffff;
-  --color-light: #eeeeee;
-  --color-border: #dddddd;
-
-  --font-main: Arial, sans-serif;
-  --font-size-base: 13px;
-  --font-size-title: 24px;
-
-  --radius-md: 20px;
-
   --header-height: 55px;
-
   --bottom-height: 65px;
 }
 
-/* 기본 */
-body {
-  margin: 0;
-  font-family: var(--font-main);
-  background: var(--color-bg);
-  padding-bottom: var(--bottom-height);
+/* 기본 스타일 초기화 */
+* {
+  box-sizing: border-box;
 }
 
-/* ===== 헤더 (투썸 스타일 핵심🔥) ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--color-bg);
+  padding-bottom: calc(var(--bottom-height) + 20px); /* 하단 바 여유 공간 */
+}
+
+/* ===== 헤더 & 배너 ===== */
 .TWOSOMEheader {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 55px;
-  background: #fff;
-
+  height: var(--header-height);
+  background: var(--color-white);
   display: flex;
   align-items: center;
-  /* justify-content: center; 로고 기준 중앙 */
-
-  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  border-bottom: 1px solid #eeeeee;
+  z-index: 2000; /* 최상단 고정 */
+  font-weight: bold;
 }
 
-/* 메뉴 아이콘 (왼쪽 고정) */
 .menu-icon {
   position: absolute;
   left: 15px;
   font-size: 20px;
+  cursor: pointer;
 }
 
-/* 로고영역 */
 .logo {
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
 }
 
-/* 헤더 밀림 방지 */
 .header-space {
   height: var(--header-height);
 }
 
-/* ===== 배너 (🔥 핵심) ===== */
 .banner {
   width: 100%;
-  height: 220px; /* 크기 줄이기! */
+  height: 180px;
+  background: #dddddd;
   overflow: hidden;
-  margin-bottom: 10px;
 }
 
 .banner-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 핵심 */
+  object-fit: cover;
 }
 
-/* 배너 텍스트 */
-.banner-text {
-  position: absolute;
-  top: 20px;
-  left: 15px;
-  color: white;
+/* ===== 로그인 섹션 ===== */
+.login-section {
+  background: var(--color-white);
+  margin: 15px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
-.sub {
-  font-size: 12px;
-  opacity: 0.9;
+.login-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-.banner-text h1 {
-  font-size: var(--font-size-title);
-  margin: 5px 0;
+.login-content span {
+  font-size: 13px;
+  color: #888888;
 }
 
-.date {
+.point-red {
+  color: var(--color-point);
+}
+
+.arrow-icon {
+  color: #cccccc;
+  font-size: 14px;
+}
+
+/* ===== 공통 섹션 레이아웃 ===== */
+.product-section {
+  background: var(--color-white);
+  padding: 20px 0;
+  margin-top: 10px;
+}
+
+.section-header {
+  padding: 0 15px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #222;
+}
+
+.more-btn {
   font-size: 11px;
+  color: #999999;
+  cursor: pointer;
 }
 
-/* ===== 카테고리 ===== */
+/* 카테고리 (가로 스크롤 가능) */
 .category {
   display: flex;
-  gap: 10px;
-  padding: 15px;
+  gap: 8px;
+  padding: 0 15px 15px;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.category::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .category span {
   padding: 6px 12px;
-  background: var(--color-light);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-base);
+  border: 1px solid #eeeeee;
+  border-radius: 15px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: #666;
+  cursor: pointer;
 }
 
 .category .active {
   background: var(--color-main);
   color: var(--color-white);
+  border-color: var(--color-main);
 }
 
-/* ===== 하단 메뉴 ===== */
+/* ===== 그리드 설정 (정사각형 박스 4개) ===== */
+.square-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열 배치 */
+  gap: 12px;
+  padding: 0 15px;
+}
+
+.product-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 정사각형 사진 영역 */
+.img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 1:1 비율 유지 */
+  background: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #bbbbbb;
+  margin-bottom: 8px;
+}
+
+/* 첫 번째 상품 강조 박스 (검은색 테두리) */
+.first-highlight {
+  border: 1.5px solid #000000;
+  border-radius: 12px;
+  padding: 8px; /* 테두리와 내부 콘텐츠 사이 간격 */
+  background: #ffffff;
+}
+
+.first-highlight .img-box {
+  background: #f2f2f2;
+  margin-bottom: 8px;
+}
+
+.product-item p {
+  font-size: 12px;
+  margin: 0;
+  color: #333333;
+  font-weight: 500;
+}
+
+/* ===== 하단 바 ===== */
 .bottom {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: var(--bottom-height);
-
+  background: var(--color-white);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-top: 1px solid #eeeeee;
+  font-size: 10px;
+  z-index: 2000;
+  padding-bottom: env(safe-area-inset-bottom); /* 아이폰 하단 바 대응 */
+}
 
-  background: var(--color-white);
-  border-top: 1px solid var(--color-border);
+.bottom span {
+  cursor: pointer;
+  color: #555;
 }

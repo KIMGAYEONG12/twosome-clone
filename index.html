@@ -1,30 +1,121 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>투썸 이벤트 페이지 따라 만들기</title>
   </head>
 
-  <body>
-    <div class="card shadow-sm relative">
-      <!-- 상태 뱃지 (이미지 밖 but 겹치게) -->
-      <span
-        class="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded z-10"
-      >
-        진행중1
-      </span>
+  <body class="bg-gray-100">
+    <header
+      class="bg-white text-center font-bold text-lg py-4 border-b sticky top-0 z-50"
+    >
+      ⬅ 🏠 이벤트
+    </header>
 
-      <div class="h-44 bg-gray-100">
-        <img src="twosomePlaceevent1.PNG" class="w-full h-full object-cover" />
+    <div class="p-4 space-y-8">
+      <div
+        class="bg-white rounded-2xl shadow-md overflow-hidden relative transform transition-all"
+      >
+        <div class="absolute top-4 left-4 z-10">
+          <span
+            class="bg-red-600 text-white text-[10px] px-2.5 py-1.5 rounded-full font-bold shadow-lg"
+          >
+          </span>
+        </div>
+
+        <div class="h-56 bg-gray-200">
+          <img
+            src="twosomePlaceevent1.PNG"
+            alt="이벤트1"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="p-5">
+          <div class="flex items-center space-x-2 mb-2">
+            <span
+              class="bg-gray-100 text-gray-600 text-[10px] px-2 py-0.5 rounded"
+              >진행중</span
+            >
+          </div>
+          <h2 class="text-lg font-bold text-gray-900 leading-tight">
+            26년 가정의 달 케이크 신제품 출시
+          </h2>
+          <p class="text-sm text-gray-400 mt-2 flex items-center">
+            <span class="mr-1">📅</span> 2026-04-15 ~ 2026-05-31
+          </p>
+        </div>
       </div>
 
-      <div class="p-4">
-        <h2 class="text-[15px] font-semibold">
-          26년 가정의 달 케이크 신제품 출시
-        </h2>
-        <p class="text-sm text-gray-400 mt-1">2026-04-15 ~ 2026-05-31</p>
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden relative">
+        <div class="absolute top-4 left-4 z-10">
+          <span
+            class="bg-red-600 text-white text-[10px] px-2.5 py-1.5 rounded-full font-bold shadow-lg"
+          >
+            ⬅ 🏠
+          </span>
+        </div>
+
+        <div class="h-56 bg-gray-200">
+          <img
+            src="Twosomeplace2.PNG"
+            alt="이벤트2"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="p-5">
+          <div class="flex items-center space-x-2 mb-2">
+            <span
+              class="bg-gray-100 text-gray-600 text-[10px] px-2 py-0.5 rounded"
+              >진행중</span
+            >
+          </div>
+          <h2 class="text-lg font-bold text-gray-900 leading-tight">
+            서울 창업 설명회 안내
+          </h2>
+          <p class="text-sm text-gray-400 mt-2 flex items-center">
+            <span class="mr-1">📅</span> 2026-04-10 ~ 2026-04-28
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden relative">
+        <div class="absolute top-4 left-4 z-10">
+          <span
+            class="bg-red-600 text-white text-[10px] px-2.5 py-1.5 rounded-full font-bold shadow-lg"
+          >
+            ⬅ 🏠
+          </span>
+        </div>
+
+        <div class="h-56 bg-gray-200">
+          <img
+            src="sandwich.PNG"
+            alt="이벤트3"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="p-5">
+          <div class="flex items-center space-x-2 mb-2">
+            <span
+              class="bg-gray-100 text-gray-600 text-[10px] px-2 py-0.5 rounded"
+              >진행중</span
+            >
+          </div>
+          <h2 class="text-lg font-bold text-gray-900 leading-tight">
+            샌드위치 신제품 출시
+          </h2>
+          <p class="text-sm text-gray-400 mt-2 flex items-center">
+            <span class="mr-1">📅</span> 2026-04-08 ~ 2026-05-31
+          </p>
+        </div>
       </div>
     </div>
+
+    <div class="h-10"></div>
   </body>
 </html>

@@ -1,0 +1,141 @@
+/* 기본 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.wrap {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+  border-bottom: 1px solid #eee;
+}
+
+.header-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.icon-space {
+  margin: 0 5px;
+}
+
+/* 배너 */
+.banner {
+  width: 100%;
+}
+
+.img-content {
+  width: 100%;
+  display: block;
+}
+
+/* 상품 섹션 공통 */
+.product-section {
+  padding: 20px 15px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.more-btn {
+  font-size: 13px;
+  color: #999;
+}
+
+/* 카테고리 탭 */
+.category {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 5px;
+}
+
+.category span {
+  padding: 8px 14px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.category span.active {
+  background: #333;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 상품 그리드 */
+.square-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.product-item {
+  width: 100%;
+}
+
+.img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 상품 텍스트 */
+.info-box {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+  word-break: keep-all;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
